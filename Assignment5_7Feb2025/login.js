@@ -10,12 +10,10 @@ document.getElementById("login-btn").addEventListener("click", async function (e
             window.location.href = "admin.html";
             return;
         }
-
-        // Fetch all users from Fake Store API
         let response = await axios.get("https://fakestoreapi.com/users");
         let users = response.data;
 
-        // Check if the entered user exists
+
         let user = users.find(u => u.username === username);
 
         if (!user) {
