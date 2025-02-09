@@ -56,11 +56,10 @@ async function DisplayFilteredProducts(callback, searchValue) {
     }
 
     products.forEach(product => {
-        // Create a div element
+        
         const productCard = document.createElement("div");
         productCard.classList.add("col-md-4", "mb-3"); // Bootstrap classes
 
-        // Set innerHTML of created element
         productCard.innerHTML = `
             <div class="card">
                 <img src="${product.image}" class="card-img-top" alt="${product.title}">
@@ -72,12 +71,12 @@ async function DisplayFilteredProducts(callback, searchValue) {
             </div>
         `;
 
-        productList.append(productCard); // Append the element
+        productList.append(productCard); 
     });
   
     
-    // Function to update total price in the UI
-    let totalPrice = 0; // Declare totalPrice globally
+  
+    let totalPrice = 0; 
 
 document.addEventListener("click", function (event) {
     if (event.target.classList.contains("add-to-cart")) {
@@ -89,7 +88,7 @@ document.addEventListener("click", function (event) {
     }
 });
 
-// Function to update total price in the UI
+
 function updateTotalPrice(price) {
     totalPrice += price;
     document.getElementById("total-price").innerHTML = `<h4>Total Price: $${totalPrice.toFixed(2)}</h4>`;
