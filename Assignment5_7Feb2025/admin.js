@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => fetchProducts());
 
-// Fetch products (from API or localStorage)
 const fetchProducts = async () => {
     let products = JSON.parse(localStorage.getItem("products"));
 
@@ -17,7 +16,7 @@ const fetchProducts = async () => {
     displayProducts(products);
 };
 
-// Display products
+
 const displayProducts = (products) => {
     const productContainer = document.getElementById("products-container");
     productContainer.innerHTML = "";
@@ -44,7 +43,7 @@ const displayProducts = (products) => {
     });
 };
 
-// Add Product
+
 document.getElementById("add-product-form").addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -67,7 +66,7 @@ document.getElementById("add-product-form").addEventListener("submit", (e) => {
     e.target.reset()
 });
 
-// Delete & Update Product
+
 document.addEventListener("click", (event) => {
     let products = JSON.parse(localStorage.getItem("products")) || [];
     const productId = event.target.getAttribute("data-id");
@@ -90,7 +89,7 @@ document.addEventListener("click", (event) => {
     }
 });
 
-// Logout
+
 document.getElementById("logout-btn").addEventListener("click", () => {
     alert("Logging out...");
     window.location.href = "login.html";
